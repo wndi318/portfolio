@@ -1,0 +1,143 @@
+section {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffcf3;
+}
+
+.content {
+    width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.headline {
+    background-color: #fffcf3;
+    z-index: 1;
+    position: relative;
+    top: 100px;
+
+    >h1 {
+        font-size: 78px;
+        line-height: 78px;
+        font-weight: 800;
+        letter-spacing: 1%;
+        text-align: center;
+        padding-left: 12px;
+        padding-right: 12px;
+        transition: color 0.2s ease-in-out;
+        margin-block-start: 0;
+
+
+        &:hover {
+            color: #FF9900;
+            cursor: default;
+        }
+    }
+}
+
+.skills {
+    width: 1440px;
+    margin-left: 36px;
+    margin-right: 36px;
+    border: 4px solid black;
+    bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    >div {
+        display: flex;
+        width: 1440px;
+        justify-content: space-evenly;
+        gap: 78px;
+    }
+}
+
+.single-skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: #FF9900;
+        scale: 1.1;
+        cursor: default;
+    }
+
+    >p {
+        font-family: 'Overpass';
+        font-size: 16px;
+        font-weight: 700px;
+        line-height: 19.2px;
+        text-align: center;
+    }
+}
+
+.arrow-section {
+    width: 1440px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    top: -50px;
+    left: 250px;
+
+    >img {
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: translateX(24px) translateY(24px);
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .skills {
+        max-width: 90vw;
+        margin-left: 50px;
+
+        >div {
+            max-width: 90vw;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: 1380px) {
+    .content {
+        max-width: 100vw;
+    }
+
+    .arrow-section {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .headline {
+        top: 60px;
+        >h1 {
+            font-weight: 800;
+            font-size: 45px;
+            line-height: 45px;
+        }
+    }
+
+    .single-skill {
+        >img {
+            width: 55px;
+            height: 60px;
+        }
+    }
+}

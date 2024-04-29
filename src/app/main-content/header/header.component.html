@@ -1,0 +1,23 @@
+<section>
+    <div class="content">
+        <div>
+            <div class="headline-section">
+                <h1 class="font-syne">Frontend<br>{{'Developer' | translate}}</h1>
+            </div>
+            <div class="name-section">
+                <hr>
+                <h2 class="font-overpass">Steffen Winter</h2>
+            </div>
+        </div>
+        <div class="arrow-section">
+            <div class="mail-container">
+                <a class="mail font-overpass" href="mailto:kontakt@steffen-winter.org"
+                    [innerHTML]="'kontakt@steffen-winter.org'"></a>
+            </div>
+            <div class="arrow" (click)="scrollToSection('about-me')">
+                <a><img src="./../../assets/img/arrow-down.svg"></a>
+                <span class="font-overpass">{{'Scroll' | translate}}<br>{{'Down' | translate}}</span>
+            </div>
+        </div>
+    </div>
+</section>

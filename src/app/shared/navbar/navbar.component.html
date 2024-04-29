@@ -1,0 +1,37 @@
+<section>
+    <div class="complete-section">
+        <div class="logo-section">
+            <a [routerLink]="''"><img src="./../../../assets/img/logo_black.png"></a>
+        </div>
+        <div class="language font-syne">
+            <span (click)="changeLanguageDe()" id="de" >DE</span>
+            <p>|</p>
+            <span (click)="changeLanguageEn()" id="en">EN</span>
+        </div>
+        <div class="menu-section">
+            <img [src]="menuImages[currentImageIndex]" (click)="toggleMenu()">
+        </div>
+    </div>
+    <div class="menu font-syne" id="menu">
+        <div class="menu-link">
+            <a [routerLink]="''" (click)="toggleMenu()" (click)="scrollToSection('about-me')">{{'About me' | translate}}</a>
+        </div>
+        <div class="menu-link">
+            <a [routerLink]="''" (click)="toggleMenu()" (click)="scrollToSection('my-skills')">{{'My skills' | translate}}</a>
+        </div>
+        <div class="menu-link">
+            <a [routerLink]="''" (click)="toggleMenu()" (click)="scrollToSection('portfolio')">Portfolio</a>
+        </div>
+        <div class="menu-footer">
+            <span>
+                <a class="say-hi" (click)="scrollToSection('contact')" (click)="toggleMenu()">{{'Say Hi' | translate}}</a>
+                <a class="font-overpass" href="mailto:kontakt@steffen-winter.org" [innerHTML]="'kontakt@steffen-winter.org'"></a>
+            </span>
+            <div>
+                <a href="https://github.com/wndi318" target="_blank"><img src="./../../../assets/img/github.svg"></a>
+                <a href="mailto:kontakt@steffen-winter.org"><img src="./../../../assets/img/mail-button.svg"></a>
+                <a href="https://www.linkedin.com/in/steffen-winter-7548372b6/" target="_blank"><img src="./../../../assets/img/linked-in.svg"></a>
+            </div>
+        </div>
+    </div>
+</section>

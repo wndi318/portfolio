@@ -1,0 +1,209 @@
+@import "../../../styles.scss";
+
+section {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 92px;
+    background-color: #fffcf3;
+    z-index: 10;
+}
+
+.complete-section {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    >a {
+        >img {
+            height: 80px;
+            margin-left: 48px;
+        }
+    }
+}
+
+.menu-section {
+    >img {
+        height: 32px;
+        margin-right: 48px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.menu {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fffcf3;
+    z-index: 1;
+    position: absolute;
+    display: none;
+}
+
+.menu-link {
+    width: 650px;
+    height: 167px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    >a {
+        text-decoration: none;
+        font-size: 96px;
+        font-weight: 700;
+        letter-spacing: 2, 5%;
+        line-height: 96px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        color: #000000;
+
+
+        &:hover {
+            --g: 4px;
+            --b: 6px;
+            --c: #FF9900;
+
+
+            padding: calc(var(--g) + var(--b));
+            --_c: #0000 0 25%, var(--c) 0 50%;
+            --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
+            --_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
+            background:
+                var(--_g1) var(--_p, 75%) 0, var(--_g2) 0 var(--_p, 75%),
+                var(--_g1) var(--_p, 75%) 100%, var(--_g2) 100% var(--_p, 75%);
+            background-size: 200% var(--b), var(--b) 200%;
+            cursor: pointer;
+        }
+    }
+}
+
+.menu-footer {
+    height: 384px;
+    width: 100%;
+    background-color: #000000;
+    clip-path: polygon(0 0, 100% 300px, 100% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    bottom: -133px !important;
+
+    >span {
+        color: #FFFCF3;
+        margin-left: 48px;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+
+        >.say-hi {
+            font-size: 78px;
+            font-weight: 800;
+            font-family: Syne;
+            letter-spacing: 1%;
+            text-align: center;
+            line-height: 78px;
+            margin-block-end: 20px;
+            transition: color 0.2s ease-in-out;
+
+            &:hover {
+                color: #FF9900;
+                cursor: default;
+            }
+        }
+
+        >a {
+            font-size: 23px;
+            font-weight: 300;
+            font-family: Overpass;
+            line-height: 23px;
+            letter-spacing: -2.5%;
+            text-decoration: none;
+            color: #FFFCF3;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                color: #FF9900;
+            }
+        }
+    }
+
+    >div {
+        margin-top: 320px;
+        display: flex;
+        justify-content: space-between;
+        gap: 42px;
+        margin-right: 48px;
+
+        >img {
+            height: 30px;
+            transition: transform 0.25s ease-in-out;
+
+            &:hover {
+                transform: translateY(-8px);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    gap: 8px;
+
+    >span {
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            color: #FF9900;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .menu-link {
+        >a {
+            font-size: 45px;
+            line-height: 45px;
+        }
+    }
+
+    .menu-footer {
+        >span {
+            >.say-hi {
+                font-size: 45px;
+                line-height: 45px;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 420px) {
+    .menu-footer {
+        justify-content: center;
+        flex-direction: column;
+        flex-direction: none;
+        clip-path: none;
+
+        >div {
+            margin-top: 50px;
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+<section>
+    <div class="headline">
+        <h1 class="font-syne">{{'Say Hi' | translate}}</h1>
+    </div>
+    <div class="form">
+        <span class="font-overpass">
+            <p class="p-first">{{'Discuss' | translate}}</p>
+            <p class="p-second">{{'Say Hello' | translate}}</p>
+        </span>
+        <form class="form-input" #contactFrom="ngForm" (ngSubmit)="onSubmit(contactFrom)">
+            <label for="name">
+                <input #name="ngModel" [(ngModel)]="contactData.name" id="name" placeholder="{{'Your name' | translate}}" name="name"
+                    type="text" required>
+                @if (!name.valid && name.touched) {
+                <span class="validation-message">{{'Please enter name' | translate}}</span>
+                }
+            </label>
+            <label for="email">
+                <input #mail="ngModel" [(ngModel)]="contactData.email" id="email" placeholder="{{'Your mail' | translate}}" name="email"
+                    type="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                @if (!mail.valid && mail.touched) {
+                <span class="validation-message">{{'Please enter mail' | translate}}</span>
+                }
+            </label>
+            <label for="message">
+                <textarea #message="ngModel" [(ngModel)]="contactData.message" id="message" placeholder="{{'Your message' | translate}}"
+                    name="message" type="text" required></textarea>
+                @if (!message.valid && message.touched) {
+                <span class="validation-message">{{'Please enter message' | translate}}</span>
+                }
+            </label>
+            <div class="agree">
+                <label for="privacyPolicy" class="custom-checkbox">
+                    <input #privacyPolicy="ngModel" [(ngModel)]="contactData.privacyPolicy" id="privacyPolicy" name="privacyPolicy" type="checkbox" required>
+                    <span class="checkmark"></span>
+                </label>
+                <span class="font-overpass">
+                    {{'Privacy policy1' | translate}} <a href="privacy-policy">{{'Privacy policy2' | translate}}</a> {{'Privacy policy3' | translate}}
+                </span>
+                @if (!privacyPolicy.valid && privacyPolicy.touched) {
+                <span class="validation-message">{{'Please agree' | translate}}</span>
+                }
+            </div>
+            <input class="font-overpass" id="button" type="submit" [disabled]="!contactFrom.valid" value="{{'Send message' | translate}}">
+            <div *ngIf="isMessageSent" class="alert alert-success font-overpass" role="alert">
+                {{'succes' | translate}}
+              </div>
+        </form>
+    </div>
+    <div class="arrow-section">
+        <a (click)="scrollToSection('header')"><img src="./../../assets/img/arrow-up.svg"></a>
+    </div>
+</section>
