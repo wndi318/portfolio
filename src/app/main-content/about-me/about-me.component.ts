@@ -12,8 +12,16 @@ export class AboutMeComponent {
   
   scrollToSection(section: string | null) {
     if (section) {
-      document.getElementById(section)?.scrollIntoView();
-    } 
+      const element = document.getElementById(section);
+      if (element) {
+        const navbarHeight = document.querySelector('section')?.clientHeight || 0;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
   }
 
 }

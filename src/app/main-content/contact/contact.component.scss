@@ -233,6 +233,7 @@ section {
     justify-content: end;
     align-items: end;
     z-index: 0;
+    right: 32px;
 
     >a {
         >img {
@@ -257,6 +258,8 @@ section {
 
 .alert {
     color: #FFFCF3;
+    border: 4px solid #FF9900;
+    padding: 4px;
 }
 
 @media (max-width: 1440px) {
@@ -286,8 +289,14 @@ section {
 @media (max-width: 700px) {
     .form {
         width: 100vw;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-    
+    .agree{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .form-input {
         >label {
             >input {
@@ -298,5 +307,11 @@ section {
 
     #message {
         width: 90vw;
+    }
+}
+
+@media (max-width: 390px) {
+    .headline {
+        top: 200px;
     }
 }

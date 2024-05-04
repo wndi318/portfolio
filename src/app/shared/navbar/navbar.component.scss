@@ -2,26 +2,30 @@
 
 section {
     position: fixed;
+    display: flex;
     width: 100vw;
     top: 0;
     left: 0;
-    height: 92px;
+    height: 140px;
     background-color: #fffcf3;
-    z-index: 10;
+    z-index: 100 !important;
+    justify-content: center;
 }
 
 .complete-section {
-    width: 100vw;
+    width: 1440px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .logo-section {
     >a {
         >img {
             height: 80px;
-            margin-left: 48px;
         }
     }
 }
@@ -29,12 +33,15 @@ section {
 .menu-section {
     >img {
         height: 32px;
-        margin-right: 48px;
 
         &:hover {
             cursor: pointer;
         }
     }
+}
+
+.back {
+    transform: rotate(270deg);
 }
 
 .menu {
@@ -47,6 +54,7 @@ section {
     background-color: #fffcf3;
     z-index: 1;
     position: absolute;
+    top: 140px;
     display: none;
 }
 
@@ -184,7 +192,10 @@ section {
     }
 
     .menu-footer {
+        bottom: 0 !important;
         >span {
+
+            margin-top: 0;
             >.say-hi {
                 font-size: 45px;
                 line-height: 45px;
@@ -195,6 +206,7 @@ section {
 }
 
 @media (max-width: 420px) {
+
     .menu-footer {
         justify-content: center;
         flex-direction: column;

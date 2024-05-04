@@ -1,14 +1,18 @@
 <section>
     <div class="complete-section">
         <div class="logo-section">
-            <a [routerLink]="''"><img src="./../../../assets/img/logo_black.png"></a>
+            <a [routerLink]="''" (click)="scrollToTop()">
+                <img *ngIf="!isLegalNoticeOrPrivacyPolicy()" src="./../../../assets/img/logo_black.png">
+                <img class="back" *ngIf="isLegalNoticeOrPrivacyPolicy()" src="./../../../assets/img/arrow-up-scroll.svg">
+            </a>
+
         </div>
         <div class="language font-syne">
             <span (click)="changeLanguageDe()" id="de" >DE</span>
             <p>|</p>
             <span (click)="changeLanguageEn()" id="en">EN</span>
         </div>
-        <div class="menu-section">
+        <div class="menu-section" *ngIf="!isLegalNoticeOrPrivacyPolicy()">
             <img [src]="menuImages[currentImageIndex]" (click)="toggleMenu()">
         </div>
     </div>

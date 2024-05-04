@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -8,7 +9,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [
     RouterLink,
-    TranslateModule],
+    TranslateModule,
+    CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -20,6 +22,10 @@ export class NavbarComponent {
   ngOnInit() {
     this.changeLanguageEn();
   }
+
+  isLegalNoticeOrPrivacyPolicy(): boolean {
+    return this.router.url.includes('legal-notice') || this.router.url.includes('privacy-policy');
+}
 
   isMenuOpen: boolean = false;
   menuImages: string[] = [
@@ -49,10 +55,22 @@ export class NavbarComponent {
     }
   }
 
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   scrollToSection(section: string | null) {
     if (section) {
-      document.getElementById(section)?.scrollIntoView();
-    } 
+      const element = document.getElementById(section);
+      if (element) {
+        const navbarHeight = document.querySelector('section')?.clientHeight || 0;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
   }
 
   rotateImages() {

@@ -1,6 +1,6 @@
 section {
-    height: 100vh;
-    width: 1440px;
+    height: calc(100vh + 104px);
+    width: 100vw;
     background-color: #fffcf3;
     display: flex;
     justify-content: center;
@@ -12,7 +12,6 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1440px;
 
     >h1 {
         font-size: 128px;
@@ -29,7 +28,6 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1440px;
 
     >hr {
         border: 3px solid black;
@@ -60,7 +58,7 @@ section {
 .arrow-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     max-width: 100%;
     z-index: 2;
 
@@ -98,8 +96,10 @@ section {
         font-weight: 300;
         font-size: 23px;
         line-height: 23px;
+        padding-bottom: 48px;
 
         >a {
+            margin-bottom: 100px;
             transition: color 0.3s ease-in-out;
             text-decoration: none;
             color: black;
@@ -122,9 +122,13 @@ section {
         }
     }
 
+    .content {
+       max-width: 100%;
+    }
+
     .mail-container {
         position: absolute;
-        left: 0%;
+        left: 1%;
     }
 
     .arrow {
@@ -142,8 +146,14 @@ section {
         }
     }
 
+    .scroll-top {
+        display: block;
+    }
+
     .mail-container {
         margin-left: -70px;
+        padding-bottom: 0px;
+        padding-top: 48px;
     }
 
     .name-section {
@@ -166,6 +176,10 @@ section {
             font-size: 36px;
             line-height: 36px;
         }
+    }
+
+    .mail-container {
+        padding-right: 50px;
     }
 
     .name-section {

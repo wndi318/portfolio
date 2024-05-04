@@ -5,7 +5,7 @@
   body {
     margin: 0;
     background-color: #fffcf3;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     scrollbar-width: thin;
     scrollbar-color: #ff9900 #fffcf3;
     display: flex;

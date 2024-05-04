@@ -27,5 +27,5 @@ import { MainContentComponent } from './main-content/main-content.component';
 })
 
 export class AppComponent {
-  title = 'Portfolio';
+  title = 'Steffen Winter';
 }

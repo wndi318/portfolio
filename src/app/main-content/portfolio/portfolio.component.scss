@@ -8,6 +8,7 @@ section {
 
 .content {
     width: 1440px;
+    padding-top: 104px;
     height: fit-content;
     display: flex;
     align-items: center;
@@ -233,7 +234,7 @@ section {
                 font-weight: 400px;
                 padding: 20px 60px 20px 60px;
                 transition: width 0.2s ease-in-out;
-    
+
                 &:hover {
                     cursor: pointer;
                     width: 250px;
@@ -269,6 +270,7 @@ section {
     .arrow-section {
         justify-content: center;
         align-items: center;
+        max-width: 100%;
     }
 
     .join {
@@ -354,6 +356,10 @@ section {
             width: 316px;
             height: 200px;
         }
+
+        >span {
+            opacity: 1;
+        }
     }
 
     .el-polo {
@@ -365,6 +371,10 @@ section {
         >img {
             width: 316px;
             height: 200px;
+        }
+
+        >span {
+            opacity: 1;
         }
     }
 
@@ -378,6 +388,10 @@ section {
             width: 316px;
             height: 200px;
         }
+
+        >span {
+            opacity: 1;
+        }
     }
 
     .da-bubble {
@@ -389,11 +403,20 @@ section {
         >img {
             width: 316px;
             height: 200px;
+        }
+
+        >span {
+            opacity: 1;
         }
     }
 }
 
 @media (max-width: 500px) {
+    .info {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .join {
         >span {
             >div {
@@ -431,31 +454,53 @@ section {
     }
 }
 
+@media (max-width: 480px) {
+    .content {
+        padding-top: 5px;
+    }
+}
+
 @media (max-width: 380px) {
+    .headline {
+        display: flex;
+        flex-direction: column;
+
+        >h1 {
+            font-size: 40px;
+            line-height: 40px;
+        }
+
+        >span {
+            padding-left: 50px;
+        }
+    }
+
     .join {
         >h1 {
             margin-left: 20px;
         }
+
         >img {
-            margin-left: 20px !important;
+            padding: 0;
         }
     }
 
     .el-polo {
         >img {
-            margin-left: 20px !important;
+            padding: 0;
         }
     }
 
     .pokedex {
         >img {
-            margin-left: 40px !important;
+            padding: 0;
         }
     }
 
     .da-bubble {
         >img {
-            margin-left: 20px !important;
+            padding: 0;
         }
     }
+
 }

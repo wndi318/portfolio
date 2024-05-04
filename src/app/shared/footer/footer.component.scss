@@ -2,24 +2,25 @@ section {
     position: relative;
     bottom: 0;
     width: 100vw;
-    height: fit-content;
     background-color: black;
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    height: fit-content;
 }
 
 .content {
-    width: 100vw;
+    width: 1440px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .left-section {
     display: flex;
     align-items: center;
-    margin-left: 48px;
 
     >span {
         color: white;
@@ -36,7 +37,6 @@ section {
     align-items: center;
     flex-direction: column;
     gap: 24px;
-    margin-right: 48px;
 
     >div {
         display: flex;

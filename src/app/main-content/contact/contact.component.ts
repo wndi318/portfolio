@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -8,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, TranslateModule, CommonModule],
+  imports: [FormsModule, TranslateModule, CommonModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -28,7 +29,7 @@ export class ContactComponent {
   isMessageSent = false;
 
   post = {
-    endPoint: 'http://steffen-winter.org/sendMail.php',
+    endPoint: 'https://steffen-winter.org/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -47,7 +48,7 @@ export class ContactComponent {
             this.isMessageSent = true;
             setTimeout(() => {
               this.isMessageSent = false;
-            }, 2000);
+            }, 5000);
           },
           error: (error) => {
             console.error(error);
@@ -58,9 +59,13 @@ export class ContactComponent {
       this.isMessageSent = true;
             setTimeout(() => {
               this.isMessageSent = false;
-            }, 2000);
+            }, 5000);
       ngForm.resetForm();
     }
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 
   scrollToSection(section: string | null) {

@@ -8,6 +8,7 @@ section {
 
 .content {
     width: 1440px;
+    padding-top: 104px;
     display: flex;
     flex-direction: column;
 }
@@ -18,8 +19,6 @@ section {
 
     >div {
         display: flex;
-        width: 619px;
-        margin-left: 100px;
         gap: 52px;
         flex-direction: column;
         transition: all 0.3s ease-out;
@@ -72,6 +71,7 @@ section {
     height: 533px;
     width: 533px;
     margin-top: 220px;
+    
 
     >img {
         transition: box-shadow 0.3s ease-in-out;
@@ -105,6 +105,10 @@ section {
     .info-content {
         flex-direction: column;
         gap: 20px;
+
+        >div {
+            width: 619px;
+        }
     }
 
     .content {
@@ -117,6 +121,7 @@ section {
     .arrow-section {
         justify-content: center;
         align-items: center;
+        max-width: 100%;
     }
 }
 
@@ -157,6 +162,10 @@ section {
 }
 
 @media (max-width: 480px) {
+    .content {
+        padding-top: 5px;
+    }
+
     .info-content {
         width: 100vw;
         margin-left: 0;

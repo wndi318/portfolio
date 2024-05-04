@@ -35,7 +35,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <span class="font-overpass">
-                    {{'Privacy policy1' | translate}} <a href="privacy-policy">{{'Privacy policy2' | translate}}</a> {{'Privacy policy3' | translate}}
+                    {{'Privacy policy1' | translate}} <a routerLink="./privacy-policy" (click)="scrollToTop()">{{'Privacy policy2' | translate}}</a> {{'Privacy policy3' | translate}}
                 </span>
                 @if (!privacyPolicy.valid && privacyPolicy.touched) {
                 <span class="validation-message">{{'Please agree' | translate}}</span>
